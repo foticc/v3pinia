@@ -6,27 +6,44 @@ import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="common-layout">
+    <el-container>
+      <el-header style="">Header</el-header>
+      <el-container>
+        <el-aside style=" background-color: #545c64;">
+          <Menu />
+        </el-aside>
+        <el-main>
+          <div>
+            <a href="https://vitejs.dev" target="_blank">
+              <img src="/vite.svg" class="logo" alt="Vite logo" />
+            </a>
+            <a href="https://vuejs.org/" target="_blank">
+              <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+            </a>
+          </div>
+          <HelloWorld msg="Vite + Vue" />
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
-  <HelloWorld msg="Vite + Vue" />
-  <Menu />
 </template>
 
 <style scoped>
+.common-layout {
+  flex: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
