@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, reactive } from "vue";
-import { useStore } from "../store/shop";
+import { useStore } from "@/store";
 
 defineProps({
   msg: String,
