@@ -3,26 +3,21 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 import Menu from "./components/Menu.vue";
+import Tabs from "@/components/Tabs.vue";
 </script>
 
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header style="">Header</el-header>
+      <el-header class="header">Header</el-header>
       <el-container>
-        <el-aside style=" background-color: #545c64;">
+        <el-aside class="aside">
           <Menu />
         </el-aside>
-        <el-main>
-          <div>
-            <a href="https://vitejs.dev" target="_blank">
-              <img src="/vite.svg" class="logo" alt="Vite logo" />
-            </a>
-            <a href="https://vuejs.org/" target="_blank">
-              <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-            </a>
-          </div>
-          <HelloWorld msg="Vite + Vue" />
+        <el-main class="main">
+          <tabs>
+            <router-view />
+          </tabs>
         </el-main>
       </el-container>
     </el-container>
@@ -30,8 +25,17 @@ import Menu from "./components/Menu.vue";
 </template>
 
 <style scoped>
+.header {
+  background-color: rgb(153, 160, 160);
+}
+.aside {
+  background-color: #545c64;
+  text-align: left;
+}
 .common-layout {
   flex: 1;
+  display: flex;
+  /* height: 100vh; */
 }
 
 .logo {
