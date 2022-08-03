@@ -12,7 +12,7 @@ const routes = [
   {
     path: "/1-1",
     name: "1-1",
-    component: () => import("@/components/Tabs.vue"),
+    component: () => import("@/components/HelloWorld.vue"),
   },
 ]
 

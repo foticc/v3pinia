@@ -1,22 +1,25 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from "./components/HelloWorld.vue";
-import Menu from "./components/Menu.vue";
+import HelloWorld from "@/components/HelloWorld.vue";
+import Menu from "@/components/Menu.vue";
 import Tabs from "@/components/Tabs.vue";
+import Header from "@/components/Header.vue";
 </script>
 
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="header">Header</el-header>
+      <el-header class="header">
+        <Header />
+      </el-header>
       <el-container>
         <el-aside class="aside">
           <Menu />
         </el-aside>
         <el-main class="main">
           <tabs>
-            <router-view />
+            <router-view replace />
           </tabs>
         </el-main>
       </el-container>
@@ -26,12 +29,15 @@ import Tabs from "@/components/Tabs.vue";
 
 <style scoped>
 .header {
-  background-color: rgb(153, 160, 160);
+  background: transparent;
+  margin: 1px;
 }
+
 .aside {
   background-color: #545c64;
   text-align: left;
 }
+
 .common-layout {
   flex: 1;
   display: flex;

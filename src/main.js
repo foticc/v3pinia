@@ -9,9 +9,15 @@ import routes from "./routes"
 import "./style.css"
 import App from "./App.vue"
 
+import { useStore } from "@/store"
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+})
+
+router.afterEach((to, from) => {
+  useStore().addTabs(to)
 })
 
 createApp(App)
