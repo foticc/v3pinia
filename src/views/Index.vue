@@ -1,12 +1,7 @@
 <script setup>
-import Tabs from "@/components/Tabs";
 </script>
 
-<template>
-  <tabs>
-    <router-view />
-  </tabs>
-</template>
+<template></template>
 
 <style scoped>
 .read-the-docs {

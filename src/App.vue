@@ -3,31 +3,30 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from "@/components/HelloWorld.vue";
 import Menu from "@/components/Menu.vue";
-import Tabs from "@/components/Tabs.vue";
+import NavTabs from "@/components/NavTabs.vue";
 import Header from "@/components/Header.vue";
 </script>
 
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header class="header">
-        <Header />
-      </el-header>
+      <el-aside class="aside">
+        <Menu />
+      </el-aside>
       <el-container>
-        <el-aside class="aside">
-          <Menu />
-        </el-aside>
+        <el-header class="header">
+          <Header />
+        </el-header>
         <el-main class="main">
-          <tabs>
-            <router-view replace />
-          </tabs>
+          <nav-tabs />
+          <router-view replace />
         </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   background: transparent;
   margin: 1px;
@@ -36,6 +35,13 @@ import Header from "@/components/Header.vue";
 .aside {
   background-color: #545c64;
   text-align: left;
+  min-width: 200px;
+  width: 210px;
+  box-shadow: 1px 1px 1px #545c61;
+}
+
+.main {
+  padding: 0;
 }
 
 .common-layout {
